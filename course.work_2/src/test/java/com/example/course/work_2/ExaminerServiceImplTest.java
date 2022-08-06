@@ -45,7 +45,7 @@ public class ExaminerServiceImplTest {
         //amount < 0
         assertThatExceptionOfType(NumberOfRequestException.class)
                 .isThrownBy(() -> examinerService.getQuestion(-10));
-        // amount > кол-ва вопросов(так как размер не задавали, по умолчанию null)
+        // amount > кол-ва вопросов(так как размер не задавали, по умолчанию 0)
         assertThatExceptionOfType(NumberOfRequestException.class)
                 .isThrownBy(() -> examinerService.getQuestion(5));
 
