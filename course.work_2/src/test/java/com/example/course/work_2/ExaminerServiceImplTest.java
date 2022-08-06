@@ -49,7 +49,6 @@ public class ExaminerServiceImplTest {
         assertThatExceptionOfType(NumberOfRequestException.class)
                 .isThrownBy(() -> examinerService.getQuestion(5));
 
-
     }
 
 
