@@ -21,6 +21,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class JavaQuestionServiceTest {
     private final QuestionService actual = new JavaQuestionService();
     Question emptyQuestion = new Question("", "");
+    Question nullQuestion = null;
+
 
     Question wrongQuestion = new Question("one", "two");
 
@@ -38,6 +40,17 @@ public class JavaQuestionServiceTest {
         //Удаление объекта, которого нет во множестве
         assertThatExceptionOfType(NoDataDeleteException.class)
                 .isThrownBy(() -> actual.remove(wrongQuestion));
+        //Добавление null объекта
+        assertThatExceptionOfType(NullPointerException.class)
+                .isThrownBy(() -> actual.add(nullQuestion));
+        //Добавление объекта c null полями
+        assertThatExceptionOfType(NullPointerException.class)
+                .isThrownBy(() -> actual.add(null, null));
+        //Удаление null объекта
+        assertThatExceptionOfType(NullPointerException.class)
+                .isThrownBy(() -> actual.remove(nullQuestion));
+
+
     }
 
 

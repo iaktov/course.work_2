@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("”/exam/get")
+@RequestMapping("/exam/get")
 public class ExamController {
     private final ExaminerService examinerService;
 

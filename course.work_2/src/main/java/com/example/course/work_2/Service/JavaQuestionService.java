@@ -22,7 +22,10 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question add(String question, String answer) {
-        if (question.equals("") || answer.equals("")) {
+        if (question.equals(null) || answer.equals(null)) {
+            throw new NullPointerException();
+        }
+            if (question.equals("") || answer.equals("")) {
             throw new NoDataEnteredException();
         }
         Question newQuestion = new Question(question, answer);
@@ -32,6 +35,9 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question add(Question question) {
+        if (question.equals(null)) {
+            throw new NullPointerException();
+        }
         if (question.getQuestion().equals("") || question.getAnswer().equals("")) {
             throw new NoDataEnteredException();
         }
@@ -41,6 +47,9 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question remove(Question question) {
+        if (question.equals(null)) {
+            throw new NullPointerException();
+        }
         if (question.getQuestion().equals("") || question.getAnswer().equals("")) {
             throw new NoDataEnteredException();
         }
