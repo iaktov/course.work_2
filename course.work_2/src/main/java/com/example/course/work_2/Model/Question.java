@@ -3,13 +3,14 @@ package com.example.course.work_2.Model;
 import java.util.Objects;
 
 public class Question {
-    String question;
-    String answer;
+   private final String question;
+    private final String answer;
 
     public Question(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
+
 
     public String getQuestion() {
         return question;
